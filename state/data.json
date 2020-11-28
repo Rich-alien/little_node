@@ -1,5 +1,22 @@
 {
-  "data": {
-
-  }
+  "product": [
+    {
+      "name": "name",
+      "count": 5,
+      "price": 500,
+      "description": "description"
+    },
+    {
+      "name": "name2",
+      "count": 5,
+      "price": 500,
+      "description": "description"
+    },
+    {
+      "name": "name3",
+      "count": 5,
+      "price": 500,
+      "description": "description"
+    }
+  ]
 }
