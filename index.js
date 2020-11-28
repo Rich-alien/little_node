@@ -2,25 +2,34 @@ const readline = require("readline");
 
 startQuiz();
 
-async function startQuiz(){
+async function startQuiz() {
     const rl = readline.createInterface({
-       input:process.stdin,
-       output:process.stdout
+        input: process.stdin,
+        output: process.stdout
     });
     let answer;
     console.log(
         "|___________________|\n" +
         "| 1. Список товаров |\n" +
-        "| 2. Добавить товар |\n"+
-        "| 3. Изменить товар |\n"+
-        "| 4. Удлить товар   |\n"+
-        "| 5.    Выход       |\n"+
+        "| 2. Добавить товар |\n" +
+        "| 3. Изменить товар |\n" +
+        "| 4. Удлить товар   |\n" +
+        "| 5.    Выход       |\n" +
         "|___________________|"
     )
     answer = await getInput(rl);
-    switch (answer){
-        case 1 :
-
+    switch (parseInt(answer)) {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            exit(rl);
+            break;
         default:
             //https://decodeit.ru/binary
             console.log('11010000 10110010 11010001 10001011 100000 11010001 10000010 11010000' +
@@ -32,9 +41,11 @@ async function startQuiz(){
     }
     exit(rl);
 }
-function exit (rl){
+
+function exit(rl) {
     rl.close();
 }
+
 function getInput(rl) {
     return new Promise(resolve => {
         rl.question(">", answer => {
