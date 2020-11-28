@@ -1,4 +1,3 @@
-//добавление json эллемент
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
@@ -9,7 +8,6 @@ async function addProduct() {
         output: process.stdout,
         terminal: false
     });
-    console.log("--> Добавление товара\n");
     console.log("Введите имя товара");
     let getName = await getInput(rl);
     console.log("Введите кол-во товара");
@@ -22,21 +20,17 @@ async function addProduct() {
     let dirPath = path.resolve(__dirname, 'state');
     const filePath = path.resolve(dirPath, 'data.json');
     const file = readFile(filePath);
-    const content = file && JSON.parse(file).data || [];
-    console.log(content);
-    content.push(...{
+    const content = file && JSON.parse(file) || [];
+    content.push({
         name: getName,
         count: getCount,
         price: getPrice,
         description: getDescription,
     });
+
     const jsonContent = JSON.stringify(content, null, 2);
     fs.mkdirSync(dirPath, {recursive: true});
     fs.writeFileSync(filePath, jsonContent);
-    // fs.writeFile(path.join(dirPath),'data.json',JSON.stringify(data),(err )=>{
-    //     if (err) console.log(err);
-    // })
-
 }
 
 
