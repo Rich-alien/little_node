@@ -1,21 +1,18 @@
 {
   "product": [
     {
-      "id": 0,
       "name": "name",
       "count": 5,
       "price": 500,
       "description": "description"
     },
     {
-      "id": 1,
       "name": "name2",
       "count": 5,
       "price": 500,
       "description": "description"
     },
     {
-      "id": 2,
       "name": "name3",
       "count": 5,
       "price": 500,
