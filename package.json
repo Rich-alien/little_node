@@ -1,0 +1,11 @@
+{
+  "name": "little_node",
+  "version": "1.0.0",
+  "description": "мини приложение по чтению удалению , доавлению и изменению данных в json объекте",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Салават",
+  "license": "ISC"
+}
