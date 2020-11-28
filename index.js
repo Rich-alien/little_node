@@ -1,4 +1,6 @@
 const readline = require("readline");
+const {changeProduct} = require("./changeProduct");
+const {deleteProduct} = require("./deleteProduct");
 const {addProduct} = require("./addProduct");
 const {readFile} = require("./readProduct");
 startQuiz();
@@ -26,11 +28,17 @@ async function startQuiz() {
             readFile();
             return startQuiz();
         case 2:
+            console.log("--> Добавление товара\n");
             await addProduct();
             return startQuiz();
         case 3:
+            console.log(" id товара под полное изменение");
+            await changeProduct();
             return startQuiz();
         case 4:
+            console.log("индекс товара на удаление");
+            await deleteProduct();
+
             return startQuiz();
         case 5:
             console.log('заходи еще!')
