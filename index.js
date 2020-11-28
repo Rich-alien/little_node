@@ -1,5 +1,6 @@
 const readline = require("readline");
-
+const {addProduct} = require("./addProduct");
+const {readFile} = require("./readProduct");
 startQuiz();
 
 async function startQuiz() {
@@ -7,6 +8,7 @@ async function startQuiz() {
         input: process.stdin,
         output: process.stdout
     });
+
     let answer;
     console.log(
         "|___________________|\n" +
@@ -16,18 +18,21 @@ async function startQuiz() {
         "| 4. Удлить товар   |\n" +
         "| 5.    Выход       |\n" +
         "|___________________|"
-    )
+    );
     answer = await getInput(rl);
     switch (parseInt(answer)) {
         case 1:
-            break;
+            readFile();
+            return startQuiz();
         case 2:
-            break;
+             addProduct()
+            return startQuiz();
         case 3:
-            break;
+            return startQuiz();
         case 4:
-            break;
+            return startQuiz();
         case 5:
+            console.log('заходи еще!')
             exit(rl);
             break;
         default:
@@ -48,8 +53,10 @@ function exit(rl) {
 
 function getInput(rl) {
     return new Promise(resolve => {
-        rl.question(">", answer => {
+
+        rl.question("> ", answer => {
             resolve(answer);
         })
     })
+
 }
