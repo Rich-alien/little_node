@@ -26,7 +26,7 @@ async function startQuiz() {
             readFile();
             return startQuiz();
         case 2:
-             addProduct()
+            await addProduct();
             return startQuiz();
         case 3:
             return startQuiz();
