@@ -6,7 +6,8 @@ startQuiz();
 async function startQuiz() {
     const rl = readline.createInterface({
         input: process.stdin,
-        output: process.stdout
+        output: process.stdout,
+        terminal: false
     });
 
     let answer;
@@ -53,7 +54,6 @@ function exit(rl) {
 
 function getInput(rl) {
     return new Promise(resolve => {
-
         rl.question("> ", answer => {
             resolve(answer);
         })
