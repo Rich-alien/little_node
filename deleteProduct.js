@@ -9,11 +9,14 @@ async function deleteProduct() {
         terminal: false
     });
 
-    let answer;
+
     let dirPath = path.resolve(__dirname, "state");
     const filePath = path.resolve(dirPath, "data.json");
-    answer = await getInput(rl);
-    delete product[answer];
+    let answer = await getInput(rl);
+    console.log(answer);
+    console.log(product);
+    product.splice(answer,1);
+    console.log(product);
     const newJsonContent = JSON.stringify(product,null, 2);
     fs.mkdirSync(dirPath, {recursive: true});
     fs.writeFileSync(filePath, newJsonContent);
