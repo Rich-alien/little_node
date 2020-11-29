@@ -1,4 +1,4 @@
-const product = require('./state/data')
+const product = require("./state/data");
 function readFile(){
     console.log("--> Чтение товара")
     console.table(product);

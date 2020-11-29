@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const readline = require('readline');
+const fs = require("fs");
+const path = require("path");
+const readline = require("readline");
 
 async function addProduct() {
     const rl = readline.createInterface({
@@ -17,8 +17,8 @@ async function addProduct() {
     console.log("Введите описание товара");
     let getDescription = await getInput(rl);
 
-    let dirPath = path.resolve(__dirname, 'state');
-    const filePath = path.resolve(dirPath, 'data.json');
+    let dirPath = path.resolve(__dirname, "state");
+    const filePath = path.resolve(dirPath, "data.json");
     const file = readFile(filePath);
     const content = file && JSON.parse(file) || [];
     content.push({

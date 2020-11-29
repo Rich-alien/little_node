@@ -1,6 +1,6 @@
 const product = require('./state/data');
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 const readline = require("readline");
 async function deleteProduct() {
     const rl = readline.createInterface({
@@ -10,8 +10,8 @@ async function deleteProduct() {
     });
 
     let answer;
-    let dirPath = path.resolve(__dirname, 'state');
-    const filePath = path.resolve(dirPath, 'data.json');
+    let dirPath = path.resolve(__dirname, "state");
+    const filePath = path.resolve(dirPath, "data.json");
     answer = await getInput(rl);
     delete product[answer];
     const newJsonContent = JSON.stringify(product,null, 2);
