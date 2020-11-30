@@ -1,3 +1,4 @@
+const get = require("getInput");
 const product = require('./state/data');
 const fs = require("fs");
 const path = require("path");
@@ -12,7 +13,7 @@ async function deleteProduct() {
 
     let dirPath = path.resolve(__dirname, "state");
     const filePath = path.resolve(dirPath, "data.json");
-    let answer = await getInput(rl);
+    let answer = await get.getInput(rl);
     console.log(answer);
     console.log(product);
     product.splice(answer,1);
@@ -26,11 +27,11 @@ async function deleteProduct() {
 module.exports = {
     deleteProduct
 }
-function getInput(rl) {
-    return new Promise(resolve => {
-        rl.question("> ", answer => {
-            resolve(answer);
-        })
-    })
-
-}
+// function getInput(rl) {
+//     return new Promise(resolve => {
+//         rl.question("> ", answer => {
+//             resolve(answer);
+//         })
+//     })
+//
+// }
