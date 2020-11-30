@@ -1,4 +1,4 @@
-const get = require("getInput");
+const get = require("./getInput");
 const product = require('./state/data');
 const fs = require("fs");
 const path = require("path");

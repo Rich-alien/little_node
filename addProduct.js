@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
-
+const get = require("./getInput");
 async function addProduct() {
     const rl = readline.createInterface({
         input: process.stdin,
@@ -9,13 +9,13 @@ async function addProduct() {
         terminal: false
     });
     console.log("Введите имя товара");
-    let getName = await getInput(rl);
+    let getName = await get.getInput(rl);
     console.log("Введите кол-во товара");
-    let getCount = await getInput(rl);
+    let getCount = await get.getInput(rl);
     console.log("Введите цену товара");
-    let getPrice = await getInput(rl);
+    let getPrice = await get.getInput(rl);
     console.log("Введите описание товара");
-    let getDescription = await getInput(rl);
+    let getDescription = await get.getInput(rl);
 
     let dirPath = path.resolve(__dirname, "state");
     const filePath = path.resolve(dirPath, "data.json");
@@ -34,13 +34,7 @@ async function addProduct() {
 }
 
 
-function getInput(rl) {
-    return new Promise(resolve => {
-        rl.question(">", answer => {
-            resolve(answer);
-        })
-    })
-}
+
 function readFile(filePath) {
     if(fs.existsSync(filePath)){
         return fs.readFileSync(filePath);

@@ -3,6 +3,7 @@ const {changeProduct} = require("./changeProduct");
 const {deleteProduct} = require("./deleteProduct");
 const {addProduct} = require("./addProduct");
 const {readFile} = require("./readProduct");
+const get = require("./getInput");
 startQuiz();
 
 async function startQuiz() {
@@ -22,7 +23,7 @@ async function startQuiz() {
         "| 5.    Выход       |\n" +
         "|___________________|"
     );
-    answer = await getInput(rl);
+    answer = await get.getInput(rl);
     switch (parseInt(answer)) {
         case 1:
             readFile();
@@ -60,11 +61,11 @@ function exit(rl) {
     rl.close();
 }
 
-function getInput(rl) {
-    return new Promise(resolve => {
-        rl.question("> ", answer => {
-            resolve(answer);
-        })
-    })
-
-}
+// function getInput(rl) {
+//     return new Promise(resolve => {
+//         rl.question("> ", answer => {
+//             resolve(answer);
+//         })
+//     })
+//
+// }
