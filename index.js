@@ -1,8 +1,8 @@
 const readline = require("readline");
 const {changeProduct} = require("./changeProduct");
 const {deleteProduct} = require("./deleteProduct");
-const {addProduct} = require("./addProduct");
-const {readFile} = require("./readProduct");
+const {addProduct ,readProduct} = require("./addProduct");
+
 const get = require("./getInput");
 startQuiz();
 
@@ -26,7 +26,7 @@ async function startQuiz() {
     answer = await get.getInput(rl);
     switch (parseInt(answer)) {
         case 1:
-            readFile();
+            readProduct();
             return startQuiz();
         case 2:
             console.log("--> Добавление товара\n");

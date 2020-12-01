@@ -2,7 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
 const get = require("./getInput");
+let i = 0;
+let content;
 async function addProduct() {
+    i++;
     const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
@@ -20,7 +23,7 @@ async function addProduct() {
     let dirPath = path.resolve(__dirname, "state");
     const filePath = path.resolve(dirPath, "data.json");
     const file = readFile(filePath);
-    const content = file && JSON.parse(file) || [];
+    content = file && JSON.parse(file) || [];
     content.push({
         name: getName,
         count: getCount,
@@ -41,6 +44,16 @@ function readFile(filePath) {
     }
     return null;
 }
-module.exports = {
-    addProduct
+const product = require("./state/data");
+function readProduct(){
+    console.log("--> Чтение товара")
+    if(i>0){
+        console.table(content);
+    }else console.table(product);
+
 }
+module.exports = {
+    addProduct,
+    readProduct
+}
+
