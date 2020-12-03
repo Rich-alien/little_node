@@ -1,17 +1,18 @@
 const readline = require("readline");
 const {changeProduct} = require("./changeProduct");
 const {deleteProduct} = require("./deleteProduct");
-const {addProduct ,readProduct} = require("./addProduct");
+const {addProduct} = require("./addProduct");
 const get = require("./getInput");
-startQuiz();
+const {setJSONData} = require("./getData");
+const {readProduct} = require("./readProduct");
 
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
+});
+startQuiz();
 async function startQuiz() {
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-        terminal: false
-    });
-        rl.setMaxListeners(400);
     console.log(
         "|___________________|\n" +
         "| 1. Список товаров |\n" +
@@ -37,7 +38,6 @@ async function startQuiz() {
         case 4:
             console.log("индекс товара на удаление");
             await deleteProduct();
-
             return startQuiz();
         case 5:
             console.log("заходи еще!")
@@ -50,5 +50,6 @@ async function startQuiz() {
 }
 
 function exit(rl) {
+    setJSONData()
     rl.close();
 }
