@@ -1,5 +1,5 @@
 const get = require("./getInput");
-const product = require('./state/data');
+const product = require('../state/data.json');
 const fs = require("fs");
 const path = require("path");
 const readline = require("readline");

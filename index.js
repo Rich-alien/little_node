@@ -1,8 +1,11 @@
 const readline = require("readline");
-const {changeProduct} = require("./changeProduct");
-const {deleteProduct} = require("./deleteProduct");
-const {addProduct ,readProduct} = require("./addProduct");
-const get = require("./getInput");
+const {changeProduct} = require("./utils/changeProduct");
+const {deleteProduct} = require("./utils/deleteProduct");
+const {addProduct ,readProduct} = require("./utils/addProduct");
+const get = require("./utils/getInput");
+const express = require("express");
+const controllers = require('./controllers');
+const path = require('path');
 startQuiz();
 
 async function startQuiz() {
@@ -48,7 +51,15 @@ async function startQuiz() {
     }
     exit(rl);
 }
+const PORT = 3000;
+const server = express();
+server.set('view engine', 'ejs');
+server.set('views', path.resolve(__dirname, 'UI'));
+server.use(express.static(path.resolve(__dirname, 'style')));
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
+server.use(controllers);
 function exit(rl) {
     rl.close();
 }

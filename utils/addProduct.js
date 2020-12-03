@@ -44,7 +44,7 @@ function readFile(filePath) {
     }
     return null;
 }
-const product = require("./state/data");
+const product = require("../state/data.json");
 function readProduct(){
     console.log("--> Чтение товара")
     if(i>0){
