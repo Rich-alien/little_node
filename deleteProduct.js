@@ -1,7 +1,7 @@
 const get = require("./getInput");
 const readline = require("readline");
-const {setData} = require("./getData");
-const {getData} = require("./getData");
+const {setData,getData} = require("./getData");
+
 async function deleteProduct() {
     const rl = readline.createInterface({
         input: process.stdin,
