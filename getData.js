@@ -9,7 +9,7 @@ let content = require('./state/data.json');
     content = product;
 
 }
- function setJSONData(){
+ function updateJSONData(){
      let dirPath = path.resolve(__dirname, "state");
      const filePath = path.resolve(dirPath, "data.json");
      const jsonContent = JSON.stringify(content, null, 2);
@@ -20,5 +20,5 @@ let content = require('./state/data.json');
 module.exports={
     getData,
     setData,
-    setJSONData
+    updateJSONData
 }

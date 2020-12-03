@@ -3,7 +3,7 @@ const {changeProduct} = require("./changeProduct");
 const {deleteProduct} = require("./deleteProduct");
 const {addProduct} = require("./addProduct");
 const get = require("./getInput");
-const {setJSONData} = require("./getData");
+const {updateJSONData} = require("./getData");
 const {readProduct} = require("./readProduct");
 
 const rl = readline.createInterface({
@@ -50,6 +50,6 @@ async function startQuiz() {
 }
 
 function exit(rl) {
-    setJSONData()
+    updateJSONData()
     rl.close();
 }
