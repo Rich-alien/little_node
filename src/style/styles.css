@@ -1,0 +1,15 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 1192px;
+    margin: 0 auto;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li {
+    list-style: none;
+    margin-right: 1rem;
+    font-size: 1.8rem;
+}
