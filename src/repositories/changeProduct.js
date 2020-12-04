@@ -1,6 +1,5 @@
 const {getData} = require("./getData");
 const {addProduct} = require("./addProduct");
-const {deleteProduct} = require("./deleteProduct");
 
 async function changeProduct(data) {
     getData().splice(data.id,1);
