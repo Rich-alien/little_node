@@ -8,6 +8,7 @@
     <table>
         <thead>
         <tr>
+            <th>id</th>
             <th>Название</th>
             <th>Кол-во</th>
             <th>Цена</th>
@@ -16,8 +17,9 @@
         </thead>
         <tbody>
         <% console.log(data); %>
-        <% data.forEach(item => { %>
+        <% data.forEach((item,id) => { %>
             <tr>
+                <td><%= id %></td>
                 <td><%= item.name %></td>
                 <td><%= item.count %></td>
                 <td><%= item.price %></td>
