@@ -13,7 +13,7 @@ router.get('/add', async (_request, response) => {
 });
 router.post('/add', async (request, response) => {
     await addProduct(request.body);
-    response.redirect('/product');
+    response.redirect('/product/view');
 });
 router.get('/edit', async (_request, response) => {
     response.render('pages/product/edit');
