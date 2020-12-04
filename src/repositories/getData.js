@@ -1,14 +1,14 @@
 const path = require("path");
 const fs = require("fs");
-let content = require('./state/data.json');
+let content = require('../state/data.json');
 
- function getData(){
-    return content;
+function getData(){
+        return content;
 }
  function setData(product){
-    content = product;
-
+        content.push(product);
 }
+
  function updateJSONData(){
      let dirPath = path.resolve(__dirname, "state");
      const filePath = path.resolve(dirPath, "data.json");
@@ -20,5 +20,4 @@ let content = require('./state/data.json');
 module.exports={
     getData,
     setData,
-    updateJSONData
 }

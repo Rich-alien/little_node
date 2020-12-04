@@ -1,10 +1,10 @@
 const readline = require("readline");
-const {changeProduct} = require("./changeProduct");
-const {deleteProduct} = require("./deleteProduct");
-const {addProduct} = require("./addProduct");
-const get = require("./getInput");
-const {updateJSONData} = require("./getData");
-const {readProduct} = require("./readProduct");
+const {changeProduct} = require("../changeProduct");
+const {deleteProduct} = require("../deleteProduct");
+const {addProduct} = require("../addProduct");
+const get = require("../getInput");
+const {updateJSONData} = require("../getData");
+const {readProduct} = require("../readProduct");
 
 const rl = readline.createInterface({
     input: process.stdin,

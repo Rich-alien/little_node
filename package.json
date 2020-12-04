@@ -4,12 +4,13 @@
   "description": "мини приложение по чтению удалению , доавлению и изменению данных в json объекте",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "serve": "nodemon  --inspect index.js"
+    "start": "node src/index.js",
+    "serve": "nodemon  --inspect src/index.js"
   },
   "author": "Салават",
   "license": "ISC",
   "dependencies": {
+    "ansi-styles": "^3.2.1",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "uuid": "^8.3.1"

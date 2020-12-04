@@ -1,0 +1,32 @@
+<%- include('../../components/headerComponent.ejs'); %>
+<%- include('./menu.ejs'); %>
+
+<div>
+    <h1 class="header-text">
+        добавление товара
+    </h1>
+    <form method="POST">
+        <div>
+            <label for="name">Имя</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="count">количество</label>
+            <input type="text" name="count" id="count">
+        </div>
+        <div>
+            <label for="price">цена</label>
+            <input type="text" name="price" id="price">
+        </div>
+        <div>
+            <label for="description">Описание</label>
+            <input type="text" name="description" id="description">
+        </div>
+        <div>
+            <button type="submit">Добавить</button>
+        </div>
+    </form>
+
+</div>
+
+<%- include('../../components/footerComponent.ejs'); %>
