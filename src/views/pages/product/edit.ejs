@@ -5,7 +5,31 @@
     <h1 class="header-text">
         редактирование товара
     </h1>
-
+    <form method="POST">
+        <div>
+            <label for="id">id товара на изменение</label>
+            <input type="text" name="id" id="id">
+        </div>
+        <div>
+            <label for="name">Новое имя</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="count">Новое количество</label>
+            <input type="text" name="count" id="count">
+        </div>
+        <div>
+            <label for="price">Новоя цена</label>
+            <input type="text" name="price" id="price">
+        </div>
+        <div>
+            <label for="description">Новое описание</label>
+            <input type="text" name="description" id="description">
+        </div>
+        <div>
+            <button type="submit">Добавить</button>
+        </div>
+    </form>
 </div>
 
 <%- include('../../components/footerComponent.ejs'); %>
