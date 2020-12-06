@@ -3,6 +3,6 @@ const productController = require('./product.controller');
 
 const router = new Router();
 
-router.use('/view', productController);
+router.use('/products', productController);
 
 module.exports = router;
