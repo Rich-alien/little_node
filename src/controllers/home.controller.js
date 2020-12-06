@@ -11,5 +11,10 @@ router.get('/add', (_request, response) => {
 router.post('/add',(_request, response) => {
     response.render('pages/viewProduct');
 });
-
+router.get('/edit', (_request, response) => {
+    response.render('pages/editProduct');
+});
+router.post('/edit',(_request, response) => {
+    response.render('pages/viewProduct');
+});
 module.exports = router;
