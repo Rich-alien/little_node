@@ -1,10 +1,10 @@
-<%- include('../../components/headerComponent.ejs'); %>
+<%- include('../components/headerComponent.ejs'); %>
 <body onload="getProducts()">
 <main class="main">
     <h1>
         <a href="/">Home</a>
     </h1>
-<%- include('./menu.ejs'); %>
+<%- include('product/menu.ejs'); %>
 
 <div>
     <h1 class="header-text">
@@ -28,10 +28,9 @@
             <input type="text" name="description" id="description">
         </div>
         <div>
-            <button type="submit">Добавить</button>
+            <button onclick="addProducts()" type="submit">Добавить</button>
         </div>
     </form>
-
 </div>
-
-<%- include('../../components/footerComponent.ejs'); %>
+    <script src="/scripts/ajax.js"></script>
+<%- include('../components/footerComponent.ejs'); %>
