@@ -4,16 +4,16 @@ const getProducts = () => {
         .then(products => {
             let textBlock = document.querySelector(".response");
             textBlock.innerHTML = "";
-            products.forEach((item,id) => {
+            products.forEach((item, id) => {
                 textBlock.innerHTML += ` 
             <tr>
-                <td>${ id} </td>
-                <td>${ item.name} </td>
-                <td>${ item.count} </td>
-                <td>${ item.price} </td>
-                <td>${ item.description} </td>
-            </tr>
-  
+                <td>${id} </td>
+                <td>${item.name} </td>
+                <td>${item.count} </td>
+                <td>${item.price} </td>
+                <td>${item.description} </td>
+                <td onclick="deleteProduct(${id})" class="button-delete">удалить</td>
+            </tr> 
 `
             });
         });
@@ -40,4 +40,18 @@ const addProducts = () => {
             getProducts();
             console.log(json);
         })
+}
+const deleteProduct = (id) => {
+    let product = document.querySelector('.response');
+    console.log(product);
+    fetch("api/products/delete", {
+        method: "DELETE",
+        body: JSON.stringify({
+            id: id,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    }).then((response) => response.json())
+
 }
