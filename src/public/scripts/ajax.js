@@ -19,13 +19,17 @@ const getProducts = () => {
         });
 };
 const addProducts = () => {
+    let name = document.getElementById("name").value;
+    let count = document.getElementById("count").value;
+    let price = document.getElementById("price").value;
+    let description = document.getElementById("description").value;
     fetch("api/products", {
         method: "POST",
         body: JSON.stringify({
-            name: "Some name",
-            count: "f",
-            price: "g",
-            description: "f"
+            name: name,
+            count: count,
+            price: price,
+            description: description
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
@@ -37,7 +41,3 @@ const addProducts = () => {
             console.log(json);
         })
 }
-// let buttonGetProducts = document.querySelector(".button-get-products");
-// let buttonAddProducts = document.querySelector(".button-add-products");
-// buttonGetProducts.addEventListener("click", getProducts);
-// buttonAddProducts.addEventListener("click", addProducts);
