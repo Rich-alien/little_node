@@ -31,8 +31,20 @@ const productRepository = {
         await writeJsonFile(FILE_PATH, products);
         return console.log("удален объект с индексом " + id);
     },
-    async edit(id){
+    async edit(data){
+        debugger;
         const products = await this.getAll();
+        let idProduct = products[data.id];
+        idProduct = {
+           id: idProduct.id,
+            name:data.name,
+            count:data.count,
+            price:data.price,
+            description:data.description,
+        };
+        products.push(idProduct);
+        await writeJsonFile(FILE_PATH, products);
+        return idProduct;
     }
 };
 
