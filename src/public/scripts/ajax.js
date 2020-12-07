@@ -6,7 +6,7 @@ const getProducts = () => {
             textBlock.innerHTML = "";
             products.forEach((item, id) => {
                 textBlock.innerHTML += ` 
-            <tr>
+            <tr id="${id}">
                 <td>${id} </td>
                 <td>${item.name} </td>
                 <td>${item.count} </td>
@@ -67,8 +67,7 @@ const editProducts = () => {
         })
 }
 const deleteProduct = (id) => {
-    let product = document.querySelector('.response');
-    console.log(product);
+    document.getElementById(id.toString()).remove();
     fetch("api/products/delete", {
         method: "DELETE",
         body: JSON.stringify({
