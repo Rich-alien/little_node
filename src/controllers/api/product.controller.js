@@ -19,5 +19,10 @@ router.delete('/delete', async (request, response) => {
         .status(201)
         .json (product)
 });
-
+router.post('/edit', async (request, response) => {
+    const product = await productRepository.edit(request.body);
+    response
+        .status(201)
+        .json (product)
+});
 module.exports = router;
