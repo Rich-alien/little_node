@@ -42,7 +42,7 @@ const addProducts = () => {
         })
 }
 const editProducts = () => {
-    let id = +document.getElementById("name").value;
+    let id = +document.getElementById("id").value;
     let name = document.getElementById("name").value;
     let count = +document.getElementById("count").value;
     let price = +document.getElementById("price").value;

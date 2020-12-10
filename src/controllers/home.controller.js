@@ -17,7 +17,8 @@ router.post('/add',(_request, response) => {
 router.get('/edit',(_request, response) => {
     response.render('pages/editProduct');
 });
-router.put('/edit', (_request, response) => {
+
+router.post('/edit', (_request, response) => {
     response.render('pages/editProduct');
 });
 
