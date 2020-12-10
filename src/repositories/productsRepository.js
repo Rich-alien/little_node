@@ -52,9 +52,9 @@ const productRepository = {
         console.log(data);
         const updateProduct = {
             id: idProduct.id,
-            name: data.name !== "" ? data.name : products.name,
-            count: data.count !== "" ? +data.count : products.count,
-            price: data.price !== "" ? +data.price : products.price,
+            name: data.name !== "" ? data.name : idProduct.name,
+            count: data.count !== "" ? +data.count : idProduct.count,
+            price: data.price !== "" ? +data.price : idProduct.price,
             description: data.name !== "" ? data.description : idProduct.description,
         };
         products[data.id] = updateProduct;
