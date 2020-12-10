@@ -25,4 +25,11 @@ router.put('/edit', async (request, response) => {
         .status(201)
         .json (product)
 });
+router.patch('/partialEdit', async (request, response) => {
+    const product = await productRepository.partialEdit(request.body);
+    response
+        .status(201)
+        .json (product)
+});
+
 module.exports = router;

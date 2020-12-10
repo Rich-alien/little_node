@@ -32,19 +32,39 @@ const productRepository = {
         return console.log("удален объект с индексом " + id);
     },
     async edit(data){
-        debugger;
         const products = await this.getAll();
-        let idProduct = products[data.id];
-        idProduct = {
-           id: idProduct.id,
+        const idProduct = products[data.id];
+        const updateProduct = {
+            id: idProduct.id,
             name:data.name,
             count:data.count,
             price:data.price,
             description:data.description,
         };
-        products.push(idProduct);
+        products[data.id] = updateProduct;
         await writeJsonFile(FILE_PATH, products);
         return idProduct;
+    },
+    async partialEdit(data){
+        debugger;
+        const products = await this.getAll();
+        console.log(data);
+        const id = data.id;
+        const name = data.name;
+        const count = data.count;
+        const price = data.price;
+        const description = data.description;
+
+        // const updateProduct = {
+        //     id: idProduct.id,
+        //     name:data.name,
+        //     count:data.count,
+        //     price:data.price,
+        //     description:data.description,
+        // };
+        // products[data.id] = updateProduct;
+        // await writeJsonFile(FILE_PATH, products);
+        // return idProduct;
     }
 };
 

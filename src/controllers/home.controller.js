@@ -17,9 +17,13 @@ router.post('/add',(_request, response) => {
 router.get('/edit',(_request, response) => {
     response.render('pages/editProduct');
 });
-
 router.post('/edit', (_request, response) => {
     response.render('pages/editProduct');
 });
-
+router.get('/partialEdit',(_request, response) => {
+    response.render('pages/partialEdit');
+});
+router.post('/partialEdit', (_request, response) => {
+    response.render('pages/partialEdit');
+});
 module.exports = router;
