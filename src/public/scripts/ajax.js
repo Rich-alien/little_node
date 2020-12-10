@@ -42,13 +42,13 @@ const addProducts = () => {
         })
 }
 const editProducts = () => {
-    let id = document.getElementById("name").id;
+    let id = +document.getElementById("name").value;
     let name = document.getElementById("name").value;
-    let count = document.getElementById("count").value;
-    let price = document.getElementById("price").value;
+    let count = +document.getElementById("count").value;
+    let price = +document.getElementById("price").value;
     let description = document.getElementById("description").value;
-    fetch("api/products", {
-        method: "POST",
+    fetch("api/products/edit", {
+        method: "PUT",
         body: JSON.stringify({
             id: id,
             name: name,
