@@ -72,7 +72,7 @@ const partialEditProducts = () => {
     let count = document.getElementById("count").value;
     let price = document.getElementById("price").value;
     let description = document.getElementById("description").value;
-    fetch("api/products/edit", {
+    fetch("api/products/partialEdit", {
         method: "PATCH",
         body: JSON.stringify({
             id: id,

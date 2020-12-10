@@ -31,40 +31,35 @@ const productRepository = {
         await writeJsonFile(FILE_PATH, products);
         return console.log("удален объект с индексом " + id);
     },
-    async edit(data){
+    async edit(data) {
         const products = await this.getAll();
         const idProduct = products[data.id];
         const updateProduct = {
             id: idProduct.id,
-            name:data.name,
-            count:data.count,
-            price:data.price,
-            description:data.description,
+            name: data.name,
+            count: data.count,
+            price: data.price,
+            description: data.description,
         };
         products[data.id] = updateProduct;
         await writeJsonFile(FILE_PATH, products);
         return idProduct;
     },
-    async partialEdit(data){
+    async partialEdit(data) {
         debugger;
         const products = await this.getAll();
+        const idProduct = products[data.id];
         console.log(data);
-        const id = data.id;
-        const name = data.name;
-        const count = data.count;
-        const price = data.price;
-        const description = data.description;
-
-        // const updateProduct = {
-        //     id: idProduct.id,
-        //     name:data.name,
-        //     count:data.count,
-        //     price:data.price,
-        //     description:data.description,
-        // };
-        // products[data.id] = updateProduct;
-        // await writeJsonFile(FILE_PATH, products);
-        // return idProduct;
+        const updateProduct = {
+            id: idProduct.id,
+            name: data.name !== "" ? data.name : products.name,
+            count: data.count !== "" ? +data.count : products.count,
+            price: data.price !== "" ? +data.price : products.price,
+            description: data.name !== "" ? data.description : idProduct.description,
+        };
+        products[data.id] = updateProduct;
+        await writeJsonFile(FILE_PATH, products);
+        return idProduct;
     }
 };
 
