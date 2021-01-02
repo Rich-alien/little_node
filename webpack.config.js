@@ -4,14 +4,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: {
-        bundle: path.resolve(__dirname, "src/scripts/main.ts")
-    },
+    entry:  path.resolve(__dirname, "src/scripts/main.ts"),
     devtool: 'inline-source-map',
     output: {
         publicPath: "/",
         path: path.resolve(__dirname, "src/public"),
-        filename: '[name].js'
+        filename: 'main.js'
     },
     module: {
         rules: [
