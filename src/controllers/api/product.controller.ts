@@ -1,4 +1,4 @@
-const productRepository = require("../../repositories/productsRepository");
+const productRepository = require("../../repositories/products.repository");
 const { Router } = require('express');
 
 const router = new Router();
