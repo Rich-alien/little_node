@@ -8,9 +8,9 @@ router.get('/', (_request, response) => {
     response.render('pages/home');
 });
 
-router.get('/products', async (_request, response) => {
+router.get('/product.ts', async (_request, response) => {
     const users = await productsRepository.getAll();
-    response.render('pages/products/view', { users });
+    response.render('pages/product.ts/view', { users });
 });
 
 module.exports = router;

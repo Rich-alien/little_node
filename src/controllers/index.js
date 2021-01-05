@@ -9,6 +9,6 @@ router.use('/admin/', adminHomeController);
 router.use('/', homeController);
 router.use('/api', apiController);
 
-router.use('/admin/products', adminUsersController);
+router.use('/admin/product.ts', adminUsersController);
 
 module.exports = router;
