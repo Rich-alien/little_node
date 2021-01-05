@@ -1,29 +1,66 @@
 [
   {
-    "name": "new",
-    "count": 45,
-    "price": 3,
-    "description": "frtg"
+    "id": 0,
+    "name": "g",
+    "count": 2,
+    "price": 345,
+    "description": "f",
+    "totalPrice": 0
   },
   {
-    "id": "029efbc0-381e-11eb-bc82-39d3d8f44764",
-    "name": "кае",
-    "count": 0,
-    "price": 0,
-    "description": "апчрпр"
+    "id": 1,
+    "name": "z",
+    "count": 2,
+    "price": 345,
+    "description": "f",
+    "totalPrice": 0
   },
   {
-    "id": "29ec79f0-381e-11eb-8c9b-197295023332",
-    "name": "fg",
-    "count": "fg",
-    "price": "fg",
-    "description": "fg"
+    "id": 2,
+    "name": "f",
+    "count": 2,
+    "price": 345,
+    "description": "f",
+    "totalPrice": 0
   },
   {
-    "id": "936eeee0-381d-11eb-a14a-6bebe72ac37f",
-    "name": "sdfgvz",
-    "count": 6,
-    "price": 43,
-    "description": "aezrfgv"
+    "id": 3,
+    "name": "f",
+    "count": 2,
+    "price": 345,
+    "description": "f",
+    "totalPrice": 0
+  },
+  {
+    "id": 4,
+    "name": "f",
+    "count": 2,
+    "price": 345,
+    "description": "f",
+    "totalPrice": 0
+  },
+  {
+    "id": 5,
+    "name": "f",
+    "count": 2,
+    "price": 345,
+    "description": "f",
+    "totalPrice": 0
+  },
+  {
+    "id": 6,
+    "name": "f",
+    "count": 2,
+    "price": 345,
+    "description": "f",
+    "totalPrice": 0
+  },
+  {
+    "id": 7,
+    "name": "f",
+    "count": 2,
+    "price": 345,
+    "description": "f",
+    "totalPrice": 0
   }
 ]
