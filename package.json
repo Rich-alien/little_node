@@ -4,7 +4,7 @@
   "description": "мини приложение по чтению удалению , доавлению и изменению данных в json объекте",
   "main": "index.js",
   "scripts": {
-    "server-start": "nodemon --inspect src/index.ts",
+    "server-start": "nodemon --inspect src/index.js",
     "client-watch": "rimraf src/public && webpack --config webpack.config.js --watch",
     "serve": "npm-run-all --parallel server-start client-watch"
   },
