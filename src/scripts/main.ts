@@ -1,5 +1,5 @@
-import '../assets/themes/base/styles/style.less';
-import { deleteProductFetch } from "./adminFun";
+// import '../assets/themes/base/styles/style.less';
+import {deleteProductFetch} from "./adminFun";
 import {Popup} from "./popUp";
 import {Product} from "./product";
 import * as data from '../../state/data.json';
