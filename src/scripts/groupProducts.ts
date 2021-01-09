@@ -32,7 +32,7 @@ export class ProductLine {
         this.productPrice.innerText = String(product.price);
 
         this.index = index;
-        const counter: Counter = new Counter(this.productCount); // New Counter
+        const counter: Counter = new Counter(this.productCount);
         counter.value = product.count;
         counter.updateCounter = (value) => {
             this.updateValues({
