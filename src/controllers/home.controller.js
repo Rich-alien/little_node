@@ -1,16 +1,9 @@
-const productsRepository = require('../repositories/products.repository');
-
 const { Router } = require('express');
-
+const data = require('../../state/data.json');
 const router = new Router();
 
-router.get('/', (_request, response) => {
-    response.render('pages/home');
-});
-
-router.get('/product.ts', async (_request, response) => {
-    const users = await productsRepository.getAll();
-    response.render('pages/product.ts/view', { users });
+router.get('/', (request, response) => {
+    response.render('.././views/pages/products/index.ejs', { data });
 });
 
 module.exports = router;
