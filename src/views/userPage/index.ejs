@@ -1,0 +1,29 @@
+<%- include('./components/headerComponent.ejs'); %>
+<body onload="initProducts()">
+<%- include('./components/navBarComponent.ejs'); %>
+<main class="main">
+    <div class="product-list">
+        <% data.forEach(item => { %>
+            <div class="product">
+                <a href="#"><img class="product__img" src="#" alt="img"></a>
+                <h4 class="product__title"><%= item.name %></h4>
+                <h3 class="product__price"><%= item.price %>$</h3>
+                <div class="product__icon-trash">
+                    <button data-id="<%= item.id %>" class="product__btn-plus ">
+                        <img class="staff__trash-img" src="" alt="">
+                    </button>
+                    <h3 class="product__price"><%= item.count %></h3>
+                    <button class="product__btn-minus">
+                        <img class="staff__trash-img" src="img/icon/bascket2.png" alt="">
+                    </button>
+                </div>
+            </div>
+        <%});%>
+    </div>
+    <div class="cart"></div>
+</main>
+<%- include('./components/footerComponent.ejs'); %>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>-->
+<!--<script src="Catalog.js"></script>-->
+</body>
+</html>
