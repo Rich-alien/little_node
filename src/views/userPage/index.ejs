@@ -4,21 +4,23 @@
 <main class="main">
     <div class="product-list">
         <% data.forEach(item => { %>
-            <div class="product">
-                <a href="#"><img class="product__img" src="#" alt="img"></a>
-                <h4 class="product__title"><%= item.name %></h4>
-                <h3 class="product__price"><%= item.price %>$</h3>
-                <div class="product__icon-trash">
-                    <button data-id="<%= item.id %>" class="product__btn-plus ">
-                        <img class="staff__trash-img" src="" alt="">
-                    </button>
-                    <h3 class="product__price"><%= item.count %></h3>
-                    <button class="product__btn-minus">
-                        <img class="staff__trash-img" src="img/icon/bascket2.png" alt="">
-                    </button>
+            <div class="product-card">
+                <div class="product-card__image">
+                    <img style="width: auto" src="" alt="zzzz">
+                </div>
+                <div class="product-cart__info">
+                    <div class="product-card__info-name">Name: <p class="product-card__name"><%= item.name %></p></div>
+                    <div class="product-card__info-price">price: <p class="product-card__price"><%= item.price %></p></div>
+<!--                    <div class="product-card__info-year">year: <p class="product-card__year">${item.year}</p></div>-->
+<!--                    <div class="product-card__info-blade">blade:<p class="product-card__blade">${item.blade}</p></div>-->
+<!--                    <div class="product-card__info-price">price:<p class="product-card__price">${item.price}</p></div>-->
+                </div>
+                <div class="product-card__more-info">
+                    <button onclick="pressBuy(${item.id})" class="product-card__button">buy</button>
                 </div>
             </div>
-        <%});%>
+            <%});%>
+
     </div>
     <div class="cart"></div>
 </main>
