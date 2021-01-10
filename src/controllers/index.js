@@ -1,14 +1,16 @@
 const {Router} = require('express');
-const homeController = require('./home.controller');
-const apiController = require('./api');
-const adminHomeController = require('./admin/home.controller');
-const adminUsersController = require('./admin/products.controller');
 
-const router = new Router();
-router.use('/admin/', adminHomeController);
-router.use('/', homeController);
-router.use('/api', apiController);
+// const apiController = require('./api');
+// const homeController = require('./admin/home.controller');
+// const adminUsersController = require('./admin/products.controller');
+const catalog = require('./home.controller')
+const app = new Router();
 
-router.use('/admin/product.ts', adminUsersController);
+// app.use('/', homeController);
+app.use('/', catalog)
+// app.use('/admin/', homeController);
+// app.use('/api', apiController);
 
-module.exports = router;
+// app.use('/admin/product.ts', adminUsersController);
+
+module.exports = app;
