@@ -1,4 +1,4 @@
-<%- include('../components/HomeComponent.ejs'); %>
+<%- include('./components/HomeComponent.ejs'); %>
 <body onload="initProducts()">
 <header class="header">
     <div class="header__logo">
@@ -90,7 +90,7 @@
 </header>
 <main class="main">
     <div class="product-list">
-        <% dataProduct.forEach(item => { %>
+        <% data.forEach(item => { %>
             <div class="product">
                 <a href="#"><img class="product__img" src="#" alt="img"></a>
                 <h4 class="product__title"><%= item.name %></h4>
