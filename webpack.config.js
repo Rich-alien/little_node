@@ -1,17 +1,19 @@
-const path = require("path");
-const webpack = require("webpack");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const EsLintWebpackPlugin = require('eslint-webpack-plugin')
+const CopyPlugin = require("copy-webpack-plugin");
+
 
 module.exports = {
-    entry: {
-        bundle: path.resolve(__dirname, "src/scripts/main.ts")
-    },
+    entry: path.resolve(__dirname, 'src/scripts/main.ts'),
     devtool: 'inline-source-map',
     output: {
-        publicPath: "/",
-        path: path.resolve(__dirname, "src/public"),
-        filename: '[name].js'
+        publicPath: '/',
+        path: path.resolve(__dirname, 'src/public'),
+        filename: 'main.js'
+    },
+    resolve: {
+        extensions: [".ts", ".js", ".less"]
     },
     module: {
         rules: [
@@ -22,55 +24,21 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|jpeg|svg)/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'images/'
-                        }
-                    }
-                ]
-
-            },
-            {
-                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'fonts/'
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.less$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: "css-loader",
-                    },
-                    {
-                        loader: "less-loader",
-                    },
-                ],
+                use: 'file-loader'
             }
+
         ]
     },
-    resolve: {
-        extensions: [".ts", ".js", ".less"]
-    },
     plugins: [
-        new webpack.ProgressPlugin(),
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: "base.css"
-        })
-    ],
+        new CopyPlugin({
+            patterns: [
+                { from: "src/assets/themes/base/images", to: "img" }
+            ],
+        }),
 
-    watchOptions: {
-        ignored: 'node_modules/**'
-    },
-};
+        new EsLintWebpackPlugin({
+            fix: true
+        })
+    ]
+}
