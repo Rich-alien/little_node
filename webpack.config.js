@@ -1,7 +1,7 @@
 const path = require('path')
+// const ExtractTestPlugin = require('extract-text-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const EsLintWebpackPlugin = require('eslint-webpack-plugin')
-const CopyPlugin = require("copy-webpack-plugin");
+
 
 
 module.exports = {
@@ -22,23 +22,10 @@ module.exports = {
                 use: "ts-loader",
                 exclude: /node_modules/
             },
-            {
-                test: /\.(png|jpg|jpeg|svg)/,
-                use: 'file-loader'
-            }
 
         ]
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new CopyPlugin({
-            patterns: [
-                { from: "src/assets/themes/base/images", to: "img" }
-            ],
-        }),
-
-        new EsLintWebpackPlugin({
-            fix: true
-        })
     ]
 }
