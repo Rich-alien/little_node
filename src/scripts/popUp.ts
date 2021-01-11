@@ -1,33 +1,38 @@
-class Popup {
-    _productData;
+import * as $ from "jquery";
+import {ProductLine} from "./productLine";
 
+let bsCount = $(".basket__counter");
+
+export class Popup {
 
     mapProductData(productData) {
         let popupContainer = document.querySelector(".popup-container__product");
-        basketCount.append(
+        bsCount.append(
             productData.forEach((item, index) => {
-                item.counter = new Product(item, popupContainer, index);
+                item.counter = new ProductLine(item, popupContainer, index);
                 item.counter.updateCount = (count) => {
                     item.count = count;
                 };
             })
         )
-
     }
 
-    constructor(productData) {
-        this._productData = productData;
-        const template = document.getElementById("popup");
+    constructor(private readonly preBasket: Array<string>) {
+        console.log(preBasket);
+        this.preBasket = preBasket;
+        const template = <HTMLTemplateElement>document.getElementById("popup");
         const content = document.importNode(template.content, true);
+
         document.querySelector(".basket").addEventListener("click", () => $(".b-popup").show());
-        content.querySelector(".button__popup").addEventListener("click", this.hideCart);
+        content.querySelector(".button__popup").addEventListener("click", Popup.hideCart);
+
         document.querySelector(".header").appendChild(content);
-        this.mapProductData(this._productData);
+        this.mapProductData(this.preBasket);
     }
 
-    hideCart = () => {
+    private static hideCart(): void {
         $(".b-popup").hide();
         $(".popup-container__product").empty();
-        basketCount.empty();
+        bsCount.empty();
     }
 }
