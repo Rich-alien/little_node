@@ -3,7 +3,7 @@ import {deleteProductFetch} from "./adminFun";
 import {Popup} from "./popUp";
 import {Product} from "./product";
 import * as data from '../../state/data.json';
-
+import '../assets/themes/base/styles/base.less';
 const listProductsInCart: Map<string, Product> = new Map();
 
 document.onclick = (event: MouseEvent) => {
