@@ -20,14 +20,14 @@ module.exports = merge(commonConfig, {
 
             },
 
-            // {
-            //     test: /\.css$/,
-            //     use: [
-            //         miniCssExtractPlugin.loader,
-            //         'css-loader',
-            //         'postcss-loader'
-            //     ]
-            // }
+            {
+                test: /\.css$/,
+                use: [
+                    miniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader'
+                ]
+            }
         ]
     },
     plugins: [
