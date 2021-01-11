@@ -1,4 +1,4 @@
-class Count {
+export class CountProduct {
     _count = 0;
     template;
     inner;
@@ -12,7 +12,7 @@ class Count {
         `;
     }
 
-    constructor(count, template) {
+    constructor(count, template: HTMLElement) {
         this.template = template;
         this.inner = this.getInnerHTML(count);
         this._count = count;
@@ -25,18 +25,19 @@ class Count {
         this.countElement = counterDiv.querySelector(".product__count");
     }
 
-    increment = () => {
+    private increment():void {
         if (this._count < 20) {
             this._count++;
             this.countElement.innerHTML = this._count;
             this.updatePrice(this._count);
         }
     }
-    decrement = () => {
+   private decrement():void {
         if (this._count > 0) {
             this._count--;
             this.countElement.innerHTML = this._count;
             this.updatePrice(this._count);
         }
     }
+    public updatePrice(value: number): void {}
 }
