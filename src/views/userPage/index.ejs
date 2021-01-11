@@ -1,10 +1,10 @@
 <%- include('./components/headerComponent.ejs'); %>
-<body onload="initProducts()">
+<body>
 <%- include('./components/navBarComponent.ejs'); %>
 <main class="main">
     <div class="product-list">
         <% data.forEach(item => { %>
-            <div class="product-card">
+            <div key="<%= item.id %>" class="product-card">
                 <div class="product-card__image">
                     <img style="width: auto" src="" alt="zzzz">
                 </div>
@@ -13,7 +13,7 @@
                     <div class="product-card__info-price">price: <p class="product-card__price"><%= item.price %></p></div>
                 </div>
                 <div class="product-card__more-info">
-                    <button onclick="pressBuy(${item.id})" class="product-card__button">buy</button>
+                    <button key="<%= item.id %>" class="product-card__button">buy</button>
                 </div>
             </div>
             <%});%>
