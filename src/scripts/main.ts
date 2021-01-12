@@ -6,35 +6,30 @@ import '../assets/themes/base/styles/base.less'
 let cart = new Map;
 let basketCount = $(".basket__counter");
 let preBasket = [];
-// let product = [];
+let newPopup = new Popup(preBasket);
 
 
-const newPopup = new Popup(preBasket); // создание popUp
 
-const allProduct: NodeListOf<HTMLElement> = document.querySelectorAll('.product-card');
 document.onclick = (event: MouseEvent) => {
-    let id: number
     if ((<HTMLElement>event.target).classList.contains('product-card__button')) {
-
-        const button: HTMLElement = <HTMLElement>event.target
-        id = +button.attributes[0].value;
+        // $('.basketPopup').remove();
+        const button: HTMLElement = <HTMLElement>event.target;
+        let id: number = +button.attributes[0].value;
+        importToCart(id);
     }
-    let productToCart: HTMLElement = allProduct[id];
-    console.log(productToCart);
+    else{
+        console.log('');
+    }
 
 };
 //проверка на совпадение эллементов
 
-// let pressBuy = (id: string) => {
-//     console.log(id)
-//     if (!cart.has(id)) {
-//         cart.set(id, setData(id));
-//         applyDiscount(cart)(discount);
-//         newPopup.mapProductData(cart);
-//         basketCount.empty()
-//         // basketCount.append(cart.size);
-//     } else {
-//         cart.get(id).count++;
-//     }
-// }
+let importToCart = (id: number) => {
+    if (!cart.has(id)) {
+        cart.set(id, data[id]);
+        newPopup.mapProductData(cart);
+    } else {
+        cart.get(id).count++;
+    }
+}
 
