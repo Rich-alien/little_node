@@ -2,7 +2,6 @@ const {Router} = require('express');
 
 const apiController = require('./api');
 const homeController = require('./admin/home.controller');
-const adminUsersController = require('./admin/products.controller');
 const catalog = require('./home.controller')
 const app = new Router();
 
