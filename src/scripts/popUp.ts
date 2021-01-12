@@ -18,21 +18,19 @@ export class Popup {
     }
 
     constructor(private readonly preBasket: Array<string>) {
-        console.log(preBasket);
         this.preBasket = preBasket;
         const template = <HTMLTemplateElement>document.getElementById("popup");
         const content = document.importNode(template.content, true);
-
         document.querySelector(".basket").addEventListener("click", () => $(".b-popup").show());
         content.querySelector(".button__popup").addEventListener("click", Popup.hideCart);
-
         document.querySelector(".header").appendChild(content);
         this.mapProductData(this.preBasket);
     }
 
     private static hideCart(): void {
         $(".b-popup").hide();
-        $(".popup-container__product").empty();
-        bsCount.empty();
+        // $(".popup-container__product").empty();
+        // $(".basketPopup").remove();
+        // bsCount.empty();
     }
 }
