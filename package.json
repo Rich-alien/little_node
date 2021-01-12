@@ -4,11 +4,8 @@
   "description": "мини приложение по чтению удалению , доавлению и изменению данных в json объекте",
   "main": "index.js",
   "scripts": {
-    "server-start": "nodemon --inspect src/index.js",
-    "client-watch": "rimraf src/public && webpack --config webpack.config.js --watch",
-    "c-watch": "rimraf src/public && webpack --config webpack.prodaction.config.js --watch",
-    "serve": "npm-run-all --parallel server-start client-watch",
-    "serveAll": "npm-run-all --parallel serve client-watch"
+    "second": "nodemon --inspect src/index.js",
+    "first": "rimraf src/public && webpack --config webpack.prodaction.config.js --watch",
   },
   "author": "Салават",
   "license": "ISC",
