@@ -3,6 +3,7 @@
   font-family: 'Sora', sans-serif;
   line-height: 30px;
   margin-right: 5px;
+
   &:hover {
     color: red
   }
@@ -17,6 +18,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &__basket {
+    cursor: pointer;
+    border: 1px solid green;
+    padding: 3px;
+    background-color: green;
+  }
 }
 
 .search {
@@ -44,10 +52,12 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+
   &__icon {
     margin-right: 5px;
   }
 }
+
 .login__button {
   color: #fff;
   cursor: pointer;
@@ -60,4 +70,24 @@
   padding: 5px 0;
   text-align: center;
   width: 135px;
+}
+
+.increment {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  cursor: pointer;
+}
+
+.decrement {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
