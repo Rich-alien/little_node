@@ -21,7 +21,7 @@ export class Popup {
         this.preBasket = preBasket;
         const template = <HTMLTemplateElement>document.getElementById("popup");
         const content = document.importNode(template.content, true);
-        document.querySelector(".basket").addEventListener("click", () => $(".b-popup").show());
+        document.querySelector(".header__basket").addEventListener("click", () => $(".b-popup").show());
         content.querySelector(".button__popup").addEventListener("click", Popup.hideCart);
         document.querySelector(".header").appendChild(content);
         this.mapProductData(this.preBasket);
@@ -29,8 +29,5 @@ export class Popup {
 
     private static hideCart(): void {
         $(".b-popup").hide();
-        // $(".popup-container__product").empty();
-        // $(".basketPopup").remove();
-        // bsCount.empty();
     }
 }
