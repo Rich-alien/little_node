@@ -7,7 +7,7 @@ const app = new Router();
 
 // app.use('/', homeController);
 app.use('/', catalog)
-app.use('/admin/', homeController);
+app.use('/admin', homeController);
 app.use('/api', apiController);
 
 // app.use('/admin/product.ts', adminUsersController);

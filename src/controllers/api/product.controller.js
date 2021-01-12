@@ -7,7 +7,7 @@ router.get('/', async (_request, response) => {
     const products = await productRepository.getAll();
     response.json(products);
 });
-router.post('/', async (request, response) => {
+router.post('/admin/admin/add', async (request, response) => {
     const product = await productRepository.add(request.body);
     response
         .status(201)
