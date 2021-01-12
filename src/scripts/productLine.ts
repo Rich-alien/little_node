@@ -16,12 +16,15 @@ export class ProductLine {
                               <p class="basket__price">${product.price * product.count}`;
 
         const counter : CountProduct = new CountProduct(product.count, template);
+        counter.updatePrice = (count) => {
+            this._count = count;
+            this.updateCount(this._count);
+            template.querySelector(".basket__price").innerHTML = String(count * product.price);
+        }
         wrapper.append(template);
     }
 
+    public updateCount(_count: any) {
+
+    }
 }
-// counter.updatePrice = (count : number) => {
-//     this._count = count;
-//     counter.updatePrice(this._count);
-//     template.querySelector(".basket__price").innerHTML = String(this._count * product.price);
-// }
