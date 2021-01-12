@@ -11,7 +11,6 @@ export class ProductLine {
 
     createProduct(product,wrapper) {
         let template = document.createElement("div");
-
         template.className = ("basketPopup");
         template.innerHTML = `<p class="basket__name">${product.name}</p>
                               <p class="basket__price">${product.price * product.count}`;
