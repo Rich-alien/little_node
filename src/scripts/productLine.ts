@@ -1,4 +1,4 @@
-import { CountProduct} from "./count";
+import { CountProduct} from "./countProduct";
 import {Product} from "./product";
 
 export class ProductLine {
