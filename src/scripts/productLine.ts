@@ -8,7 +8,7 @@ export class ProductLine {
         this.createProduct(product,wrapper);
     }
 
-    createProduct(product,wrapper) {
+    createProduct(product:Product,wrapper : Element) {
         let template : HTMLElement = document.createElement("div");
         template.className = ("basketPopup");
         template.innerHTML = `<p class="basket__name">${product.name}</p>
@@ -23,7 +23,7 @@ export class ProductLine {
         wrapper.append(template);
     }
 
-    public updateCount(_count: any) {
+    public updateCount(_count: number) {
 
     }
 }
