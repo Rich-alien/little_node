@@ -2,15 +2,14 @@ import { CountProduct} from "./countProduct";
 import {Product} from "./product";
 
 export class ProductLine {
-    private _count;
-    private newCounter;
+    private _count : number;
 
     constructor(product: Product, wrapper: Element, index: number) {
         this.createProduct(product,wrapper);
     }
 
     createProduct(product,wrapper) {
-        let template = document.createElement("div");
+        let template : HTMLElement = document.createElement("div");
         template.className = ("basketPopup");
         template.innerHTML = `<p class="basket__name">${product.name}</p>
                               <p class="basket__price">${product.price * product.count}`;

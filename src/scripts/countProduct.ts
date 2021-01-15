@@ -1,8 +1,9 @@
 export class CountProduct {
-    _count ;
-    template;
-    inner;
-    countElement;
+    _count: number;
+    template: HTMLElement;
+    inner: string;
+    countElement: Element;
+
     getInnerHTML(count) {
         return `
         <div class="increment">+</div>
@@ -28,19 +29,18 @@ export class CountProduct {
     increment = () => {
         if (this._count < 20) {
             this._count++;
-            this.countElement.innerHTML = this._count;
+            this.countElement.innerHTML = String(this._count);
             this.updatePrice(this._count);
         }
     }
     decrement = () => {
         if (this._count > 0) {
             this._count--;
-            this.countElement.innerHTML = this._count;
+            this.countElement.innerHTML = String(this._count);
             this.updatePrice(this._count);
         }
     }
 
     public updatePrice(_count: any) {
-
     }
 }

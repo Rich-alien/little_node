@@ -1,7 +1,7 @@
 import * as $ from "jquery";
 import {ProductLine} from "./productLine";
 
-let bsCount = $(".basket__counter");
+let bsCount: JQuery = $(".basket__counter");
 
 export class Popup {
 
@@ -20,7 +20,7 @@ export class Popup {
     constructor(private readonly preBasket: Array<string>) {
         this.preBasket = preBasket;
         const template = <HTMLTemplateElement>document.getElementById("popup");
-        const content = document.importNode(template.content, true);
+        const content: DocumentFragment = document.importNode(template.content, true);
         document.querySelector(".header__basket").addEventListener("click", () => $(".b-popup").show());
         content.querySelector(".button__popup").addEventListener("click", Popup.hideCart);
         document.querySelector(".header").appendChild(content);
