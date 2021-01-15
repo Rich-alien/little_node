@@ -21,8 +21,8 @@ export class CountProduct {
         counterDiv.className = "container-count";
         counterDiv.innerHTML = this.inner;
         this.template.appendChild(counterDiv);
-        counterDiv.querySelector(".increment").addEventListener("click", this.increment);
-        counterDiv.querySelector(".decrement").addEventListener("click", this.decrement);
+        counterDiv.querySelector(".counter__increment").addEventListener("click", this.increment);
+        counterDiv.querySelector(".counter__decrement").addEventListener("click", this.decrement);
         this.countElement = counterDiv.querySelector(".product__count");
     }
 
